@@ -45,27 +45,24 @@ Vue.component(StPicker.name, StPicker);
 export default {
   data() {
     return {
-      // show picker or not
       showPicker: !1,
-      // items to select
       items: [ ... ],
     };
   },
   methods: {
-    // submit callback
     onSubmit(values) {},
   },
 };
 </script>
 ```
 
-- `model`: `bool` `required` show picker or not
+- `model`: `bool` `required` whether show picker or not
 - `items`: `array` `required` items to select
 - `onSubmit`: `function` `required` submit callback, `values => { ... }`
 - `onCancel`: `function` cancel callback, `() => { ... }`
-- `okText`: `string` `default: OK` ok btn text
-- `cancelText`: `string` `default: Cancel` cancel btn text
-- `divider`: `bool` `default: false` show divider or not
+- `okText`: `string` `default: OK` ok button text
+- `cancelText`: `string` `default: Cancel` cancel button text
+- `divider`: `bool` `default: false` whether show divider or not
 - `visibleItemsCount`: `number` `default: 5` visible items count
 
 #### items
