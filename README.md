@@ -73,27 +73,21 @@ export default {
 One level:
 
 ```
-[
-  {value: '1'},
-  {value: '2'},
-  {value: '3'},
-]
+[{ value: '1' }, { value: '2' }, { value: '3' }]
 ```
 
 Two levels:
 
 ```
 [
-  {value: '1', children: [
-    {value: '1-1'},
-    {value: '1-2'},
-    {value: '1-3'},
-  ]},
-  {value: '2', children: [
-    {value: '2-1'},
-    {value: '2-2'},
-    {value: '2-3'},
-  ]},
+  {
+    value: '1',
+    children: [{ value: '1-1' }, { value: '1-2' }, { value: '1-3' }],
+  },
+  {
+    value: '2',
+    children: [{ value: '2-1' }, { value: '2-2' }, { value: '2-3' }],
+  },
 ]
 ```
 
@@ -101,30 +95,32 @@ Three levels:
 
 ```
 [
-  {value: '1', children: [
-    {value: '1-1', children: [
-      {value: '1-1-1'},
-      {value: '1-1-2'},
-      {value: '1-1-3'},
-    ]},
-    {value: '1-2', children: [
-      {value: '1-2-1'},
-      {value: '1-2-2'},
-      {value: '1-2-3'},
-    ]},
-  ]},
-  {value: '2', children: [
-    {value: '2-1', children: [
-      {value: '2-1-1'},
-      {value: '2-1-2'},
-      {value: '2-1-3'},
-    ]},
-    {value: '2-2', children: [
-      {value: '2-2-1'},
-      {value: '2-2-2'},
-      {value: '2-2-3'},
-    ]},
-  ]},
+  {
+    value: '1',
+    children: [
+      {
+        value: '1-1',
+        children: [{ value: '1-1-1' }, { value: '1-1-2' }, { value: '1-1-3' }],
+      },
+      {
+        value: '1-2',
+        children: [{ value: '1-2-1' }, { value: '1-2-2' }, { value: '1-2-3' }],
+      },
+    ],
+  },
+  {
+    value: '2',
+    children: [
+      {
+        value: '2-1',
+        children: [{ value: '2-1-1' }, { value: '2-1-2' }, { value: '2-1-3' }],
+      },
+      {
+        value: '2-2',
+        children: [{ value: '2-2-1' }, { value: '2-2-2' }, { value: '2-2-3' }],
+      },
+    ],
+  },
 ]
 ```
 
@@ -134,9 +130,9 @@ Three levels:
 values => { ... }
 ```
 
-One level: `values: ['1']`
-Two levels: `values: ['1', '1-1']`
-Three levels: `values: ['1', '1-1', '1-1-1']`
+- One level: `values: ['1']`
+- Two levels: `values: ['1', '1-1']`
+- Three levels: `values: ['1', '1-1', '1-1-1']`
 
 #### examples
 

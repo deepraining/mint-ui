@@ -7,6 +7,8 @@ import Vue from 'vue';
 import { Popup, Picker, DatetimePicker, Button } from 'mint-ui';
 import { Picker as StPicker } from '../../src';
 import '../../src/styles/index.less';
+// import { Picker as StPicker } from '../../es';
+// import '../../es/styles.css';
 
 import App from './App';
 
