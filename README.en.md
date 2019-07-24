@@ -1,10 +1,10 @@
 # @senntyou/mint-ui
 
-[English Documentation](./README.en.md)
+[中文文档](./README.md)
 
-[mint-ui](https://github.com/ElemeFE/mint-ui) 扩展.
+[mint-ui](https://github.com/ElemeFE/mint-ui) extensions.
 
-官方 `mint-ui` 仓库缺失很多功能, 并且目前没有人维护了, 所以我在这里添加了一些组件.
+Official `mint-ui` repository misses some functionality, and is unmaintained now, so I add some components here.
 
 ```
 npm install @senntyou/mint-ui --save
@@ -16,7 +16,7 @@ import {
 } from '@senntyou/mint-ui';
 ```
 
-## Picker: 弹出选择器
+## Picker: popup picker
 
 ![](./preview/picker.png)
 
@@ -26,11 +26,11 @@ import { Popup, Picker, DatetimePicker } from 'mint-ui';
 import { Picker as StPicker } from '@senntyou/mint-ui';
 import '@senntyou/mint-ui/es/styles.css';
 
-// 这些需要首先加载
+// here should be loaded at first
 Vue.component(Popup.name, Popup);
 Vue.component(Picker.name, Picker);
 Vue.component(DatetimePicker.name, DatetimePicker);
-// 然后是这里
+// then here
 Vue.component(StPicker.name, StPicker);
 ```
 
@@ -58,24 +58,24 @@ export default {
 </script>
 ```
 
-- `model`: `bool` `required` 是否显示 picker
-- `items`: `array` `required` 供选择的 items
-- `onSubmit`: `function` `required` 确定的回调, `values => { ... }`
-- `onCancel`: `function` 取消的回调, `() => { ... }`
-- `okText`: `string` `default: OK` 确定按钮文本
-- `cancelText`: `string` `default: Cancel` 取消按钮文本
-- `divider`: `bool` `default: false` 是否显示分隔符
-- `visibleItemsCount`: `number` `default: 5` 可见项目数
+- `model`: `bool` `required` whether show picker or not
+- `items`: `array` `required` items to select
+- `onSubmit`: `function` `required` submit callback, `values => { ... }`
+- `onCancel`: `function` cancel callback, `() => { ... }`
+- `okText`: `string` `default: OK` ok button text
+- `cancelText`: `string` `default: Cancel` cancel button text
+- `divider`: `bool` `default: false` whether show divider or not
+- `visibleItemsCount`: `number` `default: 5` visible items count
 
 #### items
 
-一级:
+One level:
 
 ```
 [{ value: '1' }, { value: '2' }, { value: '3' }]
 ```
 
-二级:
+Two levels:
 
 ```
 [
@@ -90,7 +90,7 @@ export default {
 ]
 ```
 
-三级:
+Three levels:
 
 ```
 [
@@ -129,10 +129,10 @@ export default {
 values => { ... }
 ```
 
-- 一级: `values: ['1']`
-- 二级: `values: ['1', '1-1']`
-- 三级: `values: ['1', '1-1', '1-1-1']`
+- One level: `values: ['1']`
+- Two levels: `values: ['1', '1-1']`
+- Three levels: `values: ['1', '1-1', '1-1-1']`
 
-#### 示例
+#### examples
 
 [view/picker/App.vue](./view/picker/App.vue)
