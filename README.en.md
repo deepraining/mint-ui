@@ -136,3 +136,66 @@ values => { ... }
 #### examples
 
 [view/picker/App.vue](./view/picker/App.vue)
+
+## MultiSelect: popup multiple select
+
+![](./preview/multi-select.png)
+
+```
+import Vue from 'vue';
+import { Popup, DatetimePicker, Checklist } from 'mint-ui';
+import { MultiSelect as StMultiSelect } from '../../src';
+import '@senntyou/mint-ui/es/styles.css';
+
+// here should be loaded at first
+Vue.component(Popup.name, Popup);
+Vue.component(DatetimePicker.name, DatetimePicker);
+Vue.component(Checklist.name, Checklist);
+// then here
+Vue.component(StMultiSelect.name, StMultiSelect);
+```
+
+```
+<template>
+  <st-mt-multi-select
+    v-model="showPicker"
+    :options="options"
+    :onSubmit="onSubmit"
+  />
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      showPicker: !1,
+      options: ['Selection 1', 'Selection 2', ...],
+    };
+  },
+  methods: {
+    onSubmit(values) {},
+  },
+};
+</script>
+```
+
+- `model`: `bool` `required` whether show picker or not
+- `options`: `array` `required` options to select
+- `onSubmit`: `function` `required` submit callback, `values => { ... }`
+- `onCancel`: `function` cancel callback, `() => { ... }`
+- `okText`: `string` `default: OK` ok button text
+- `cancelText`: `string` `default: Cancel` cancel button text
+
+#### onSubmit
+
+```
+values => { ... }
+```
+
+```
+values: ['Selection 1', 'Selection 2', ...]
+```
+
+#### examples
+
+[view/multi-select/App.vue](./view/multi-select/App.vue)
