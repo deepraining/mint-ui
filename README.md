@@ -136,3 +136,66 @@ values => { ... }
 #### 示例
 
 [view/picker/App.vue](./view/picker/App.vue)
+
+## MultiSelect: 弹出多选选择器
+
+![](./preview/multi-select.png)
+
+```
+import Vue from 'vue';
+import { Popup, DatetimePicker, Checklist } from 'mint-ui';
+import { MultiSelect as StMultiSelect } from '@senntyou/mint-ui';
+import '@senntyou/mint-ui/es/styles.css';
+
+// 这些需要首先加载
+Vue.component(Popup.name, Popup);
+Vue.component(DatetimePicker.name, DatetimePicker);
+Vue.component(Checklist.name, Checklist);
+// 然后是这里
+Vue.component(StMultiSelect.name, StMultiSelect);
+```
+
+```
+<template>
+  <st-mt-multi-select
+    v-model="showPicker"
+    :options="options"
+    :onSubmit="onSubmit"
+  />
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      showPicker: !1,
+      options: ['Selection 1', 'Selection 2', ...],
+    };
+  },
+  methods: {
+    onSubmit(values) {},
+  },
+};
+</script>
+```
+
+- `model`: `bool` `required` 是否显示 picker
+- `options`: `array` `required` 供选择的 options
+- `onSubmit`: `function` `required` 确定的回调, `values => { ... }`
+- `onCancel`: `function` 取消的回调, `() => { ... }`
+- `okText`: `string` `default: OK` 确定按钮文本
+- `cancelText`: `string` `default: Cancel` 取消按钮文本
+
+#### onSubmit
+
+```
+values => { ... }
+```
+
+```
+values: ['Selection 1', 'Selection 2', ...]
+```
+
+#### 示例
+
+[view/multi-select/App.vue](./view/multi-select/App.vue)

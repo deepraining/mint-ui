@@ -144,7 +144,7 @@ values => { ... }
 ```
 import Vue from 'vue';
 import { Popup, DatetimePicker, Checklist } from 'mint-ui';
-import { MultiSelect as StMultiSelect } from '../../src';
+import { MultiSelect as StMultiSelect } from '@senntyou/mint-ui';
 import '@senntyou/mint-ui/es/styles.css';
 
 // here should be loaded at first
