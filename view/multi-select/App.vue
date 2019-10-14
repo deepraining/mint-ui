@@ -24,7 +24,10 @@ export default {
   data() {
     return {
       showPicker: !1,
-      options: [1, 2, 3, 4, 5, 6, 7, 8].map(id => `Selection ${id}`),
+      options: '.'
+        .repeat(20)
+        .split('')
+        .map((i, index) => `Selection ${index}`),
       result: false,
     };
   },

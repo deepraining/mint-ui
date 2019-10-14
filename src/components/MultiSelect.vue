@@ -13,7 +13,9 @@
           >{{ okText }}</span
         >
       </div>
-      <mt-checklist :options="options" v-model="result" />
+      <div class="st-mt-content">
+        <mt-checklist :options="options" v-model="result" />
+      </div>
     </mt-popup>
   </div>
 </template>
